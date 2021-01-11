@@ -1,0 +1,321 @@
+*:root{
+  --size:95vw;
+  --baseColour:#76b4fd;
+  --houseTopAndSize:40%;
+  --bgray:#575757;
+}
+*{
+  margin:0;
+  box-sizing:border-box;
+}
+a{
+  opacity:0;
+  pointer-events:none;
+}
+html,body,*{
+  user-select:none;
+  -webkit-user-select:none;
+}
+body{
+  background:black;
+  perspective:64px;
+  height:100vh;
+  color:white;
+  word-break:keep-all;
+  word-wrap:break-word;
+}
+
+/*
+rate: 987.984÷624= 1.583307
+*/
+
+div#container{
+  width:var(--size);
+  height:calc(var(--size) / 1.583307);
+  position:relative;
+  margin:5vh auto;
+  border:5px outset #ff0;
+  box-sizing:content-box;
+  overflow:hidden hidden !important;
+  background:var(--baseColour);
+  perspective:64px;
+}
+img{
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
+}
+img#sample{
+  width:100%;
+  top:-11%;
+  z-index:-100;
+  display:none;
+}
+img#carInside{
+  z-index:10 !important;
+}
+div#houses, div#housesCopy{
+  position:absolute;
+  width:45%;
+  height:var(--houseTopAndSize);
+  transform:rotateY(50deg);
+  top:calc(52% - (var(--houseTopAndSize) / 2));
+  left:15%;
+  z-index:3;
+}
+div#houses::before, div#housesCopy::before{
+  content:"";
+  position:absolute;
+  right:-3%;
+  display:block;
+  height:100%;
+  width:45%;
+  background:linear-gradient(to left top, var(--bgray) 0% 0%, transparent 25%),
+    linear-gradient(to left bottom, var(--baseColour) 0% 20%, transparent 60%);
+  z-index:50;
+}
+img.tree{
+  height:100%;
+  width:auto;
+  position:absolute;
+  left:52%;
+  top:24%;
+  z-index:30;
+  animation:ent 11s infinite linear;
+  transform:scale(.6, 1);
+}
+@keyframes ent{
+  100%{left:-50%}
+}
+div#housesCopy{
+  transform:rotateY(129deg);
+  left:47%;
+}
+
+/*
+870÷624 = 1.394230
+*/
+
+div.houseMove{
+  animation:houseRun 20s linear infinite;
+  height:calc(100%);
+  width:calc(100% * 0.25);
+  right:0%;
+  top:0;
+  position:absolute;
+  z-index:4;
+  background:url('https://lh5.googleusercontent.com/sFIQmmXc4yW34jsiyAA8eEc998tTVh5gWwhWq7xh8LdwbOi5aXczZ6uoFwFGDy0jJupQiPhdSDutWWCFj3RG=w1366-h624-rw') no-repeat center center;
+  background-size:contain;
+  transform:scale(1.3, 3);
+}
+@keyframes houseRun{
+  0%{right:0%;}
+  100%{right:130%;}
+}
+div#canvass{
+  width:100%;
+  height:40%;
+  position:absolute;
+  background:var(--bgray);
+  bottom:0%;
+  z-index:2;
+  left:0;
+}
+div#canvass>div{
+  position:absolute;
+  z-index:20 !important;
+}
+div#canvass::before{
+  content:"";
+  width:100%;
+  background:linear-gradient(to top, var(--bgray) 0 50%, #0000 100%);
+  height:20%;
+  bottom:50%;
+  left:0;
+  display:block;
+  position:absolute;
+  z-index:21;
+}
+div#asphalt{
+  position:absolute;
+  width:100%;
+  height:30%;
+  border-radius:50%;
+  bottom:20%;
+  left:0;
+  background:linear-gradient(to top, var(--bgray) 0% 70%, transparent 84% 100%);
+  z-index:1 !important;
+}
+div#sun{
+  position:absolute;
+  width:6%;
+  height:calc(6% * 1.583307);
+  background:#fe0;
+  border-radius:50%;
+  z-index:0;
+  top:27%;
+  left:50%;
+  filter:blur(10px);
+  animation:lightPulse 10s infinite linear;
+  display:none;
+}
+@keyframes lightPulse{
+  50%{opacity:.3;}
+}
+div.bird{
+  position:absolute;
+  width:2%;
+  top:30%;
+  left:20%;
+  z-index:1;
+  transition:15s ease-in-out all;
+}
+div.first{
+  opacity:.7;
+}
+div.second{
+  opacity:.5;
+}
+img.bbody{
+}
+img.bwings{
+  animation:wings .5s infinite ease;
+}
+@keyframes wings{
+  50%{transform:translate(0, -5px) rotateX(20deg);}
+}
+h1#hide{
+  position:fixed;
+  display:flex;
+  background:linear-gradient(to right, transparent, #0ff, transparent);
+  width:100vw;
+  top:calc(50% - 1rem);
+  font-size:2rem;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+  font-family:'serif';
+  text-shadow:1px 1px 5px black;
+  font-weight:100;
+  -webkit-text-stroke:.5px red;
+  animation:hidding 2.5s linear;
+  opacity:0;
+}
+@keyframes hidding{
+  0%{opacity:0;}
+  25%{opacity:1;}
+  100%{opacity:0;}
+}
+*::-webkit-scrollbar{
+  display:none !important;
+}
+button{
+  position:fixed !important;
+  top:0 !important;
+  left:0 !important;
+  width:calc(2vh + 2vw);
+  height:calc(2vw + 2vh);
+  font-size:1rem;
+  padding:10px;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-shadow:1px 1px 3px red;
+  font-weight:900;
+}
+form{
+  bottom:6vh;
+  background:linear-gradient(to right, #0f0, #0000, #0f0);
+  color:yellow;
+  text-align:center;
+  padding:10px;
+  font-size:1.5rem;
+}
+form>input[type="checkbox"]{
+  zoom:1.5;
+  vertical-align:sub;
+}
+footer{
+  position:fixed;
+  bottom:5vh;
+  left:0;
+  color:#090;
+  text-align:center;
+  width:100vw;
+  font-size:2rem;
+  animation:plim 2s ease-in-out;
+  animation-iteration-count:7;
+  text-shadow:1px 1px 8px yellow;
+  word-spacing:3px;
+}
+@keyframes plim{
+  25%{left:10px; word-spacing:23px;}
+  50%{color:#0f0; word-spacing:3px;}
+  75%{left:-10px; word-spacing:23px;}
+}
+
+@media (min-width:500px){
+  *:root{
+    --size:65vw;
+  }
+  div#container{
+    border:5px outset #99f;
+  }
+}
+@media (min-width:1024px){
+  *:root{
+    --size:85vw;
+  }
+  div#container{
+    border:5px outset #f00;
+  }
+  div#canvass{
+    height:43%;
+  }
+  img.tree{
+    transform:scale(.3, 1);
+  }
+  div#asphalt{
+    height:34%;
+  }
+  div#houses{
+    left:10%;
+  }
+  div#housesCopy{
+    left:52%;
+  }
+}
+@media (min-width:1366px){
+  *:root{
+    --size:65vw;
+  }
+  div#container{
+    border:5px outset #9f9;
+  }
+}
+@media (min-width:1600px){
+  *:root{
+    --size:85vw;
+  }
+  div#container{
+    border:5px outset #f00;
+  }
+  div#canvass{
+    height:43%;
+  }
+  img.tree{
+    transform:scale(.3, 1);
+  }
+  div#asphalt{
+    height:34%;
+  }
+  div#houses{
+    left:10%;
+  }
+  div#housesCopy{
+    left:52%;
+  }
+}
+
