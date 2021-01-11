@@ -109,6 +109,14 @@ car.addEventListener('click', function() {
   }
 });
 
+plan.addEventListener('click', function() {
+  if (plan.checked === true) {
+    sample.style.display = 'block';
+  } else {
+    sample.style.display = 'none';
+  }
+});
+
 function driveMe() {
   var k = event.key,
       wh = event.which,
