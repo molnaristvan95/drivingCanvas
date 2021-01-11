@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="eng" oncontextmenu="return false">
+  <head>
+    <title>3D driver canvas</title>
+  <meta name="description" content="Watch out everybody - how need to do this..">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f60">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <style id="keyfCSS" rel="stylesheet" type="text/css"></style>
+  </head>
+  <body>
+    <div id="container">
+      <img id="sample" src="https://lh3.googleusercontent.com/fife/ABSRlIpR31Z3L6oBvTZpx5gXYHM8yMGDi8i0UK3zVC9aYF6L32ZNtDEk9k1-bh-wOEkyYY65C36MhapM6xGQLlXvq9WOyxoZ5M3-kSkhjBcGyevDxPpWSejKlUqEqnyRxkf1fa0Z7WOcd30O1gSBmlQBwy77nVhtqR0keIaHaG4pTWd42AhPvdc6PJ84zBHhGZWlnqmf4LXQxwYHrMY7k8JDI8ddpl-_TZOnXM7ZXMfW0DTLe7VLsYFtVgWRL4wxGQjtir7z-3jRBbpUwMtHeM0m5dWXabvJyxFYbQ3_1uTTrqzjkaJ6j3FcTuafRm7oeS7DfsHst3vGJA7IYb6QAN_UpK60L-kVdUyU3YDg7AiiHjes-IDd-SIV1bipwOOl8Byluv7l_XA9sjhesDflII_50dRkPgSpWK2XwMMy7rlZWdZFzRP5pwX-i-LdALZ8StHak05Ph50zmtuy_YAlF7q4AG04HplnW3KzBzCo8CK33KgeTxxmkFgVOzy753c2yFzzUhKu9Sk5eulGEugrPZHv3IH6WKK0vhyrYdVKDA89_upcaimK8CpxEeF1s_qj0zM2kWxK0KGcH4ruW4F2TnUjEyWCdhbfquehXTpsT2OvmWkJSB4MG4FyHedqeC5knTPTxqUFJMp_9aGCXUIhrrK668e6g992VebZdTSIvXdpECkOeig8T6lezSipp1NA0pz4e7D7jFPCL85AG2gLU7eJhJScluvqjMGtxww=w1366-h624-ft" alt="kép az egészről - minta - hogyan nézzen ki">
+      <img id="carInside" src="https://lh3.googleusercontent.com/fife/ABSRlIpxEku7XCrwrwTlONhLTqkteIRFTjOt8RO42HKo4NTO8M1H72fpQbOm85L7Tbxo6_uKftnjR7k1Iq3quHfI4_tgkgl7kiqi_0gJw69cTkAm7GCloyn3KOA3aKG9deWf1EnolF5AsPveXJPWvoZNjvnnM0GSQ5ADBTMrjtkOw_Ru2SZ0EZl_FAn437TFPYq73oilO0hguYATsazDrGQb9169FLBlkpmyic4nDKuVvhGUQY-6Y-apj1trz4ZW8SRzI_w1HscUCAxzakqmdIpUkM0neFo8HqnDqzNAEbhqce0wbXuPXvkCiu_6ZksBeMaFOOdIxSoNISHvVdjv9Jt9hdVMcIm6ChiEGISKQk6oM-sT6ETVnaq_KWzUd9X_HVX8_5p59LlDobEBypd-29vhN9a9-NADAmcOLzVZdbgdrB4bg-VzXoG4RMCOKSe4QslPe3omPiNO8S9x2ENaFy0jrVvBSBo1nqbaY4Oeq_WbQlIwDOfQsD0B9Y0pDcx8UZgDEYNe11r4sYLzS_eonh-trG3oJNafLcSCg58crsbJcWUCpzc4DdUXA-GRyDLb7Ek9u_oa-P-eN0E_QOnBahh0c0VDAdcr4-NaGXrJxQrduvcaqlLq9WgYqAcMDU2NDIuHRwGtC98Zch0vHj7YGVV8vsfO4-xu_GkC5uM8RqRy4PqyEuR5rPjuJZfxCl14PrUjAOKU-ot_k5iKiC1t55fCfzoMKmML6y0s1iI=w1366-h624-ft" alt="az autó belseje kinézet kép">
+      <div id="houses">
+        <img class="tree" alt="fa kép 001" src="https://lh3.googleusercontent.com/fife/ABSRlIqnsAmRcCZPQFuVyRyudtI_IWHWXMV-2kJZXDonIiHlGmbzJz_ZUG2O337pr5J86O2sI0pusgviEHAPMEQyYfZEEEpyQeVTWKqUq8Yk-EPiUj80FeeDiWyal-eP4FW1tmH206nEJKK0VBLIgHNRIoSyx8nXRuk9nqjAIh4KI1V1d38bXSdZpgigih6P0Tx_5PRYsyXy_cZ8yAyzmr2eD_LYKnT_qhoNJgpFfgr7rRWbkfbqpun0e0guof3tK4a4Tyjaz5LCu9Im9QerrRP0PXk3Rj9POvsU9yb9MDuWp_DIbPIWEmUggiyWLq_tu7pU0Vx6b5YoGJTHp7i9pWQAYUOx2scoDvz0AKblKDegLEthbYla253h3IyZVcal4I4X8324faoHhL9koqhmtsZIzHhglkjOiCmxU5RYSSmlUfnJVj7KdYny6NlQIqcyy4nG_UPQMeulze081ey3JC7WOfRyWGji3JZ4-v1TM_9IkfBbGZNeEU6wvyBt8LYv7dCXV3-KSkq5LJ8JHO297WM7IKk1RPkVddW_MsZTUIuX0Wt4hj11UEPF1VQkktAZ-ePSWB2XxZZbV_HQMnMs6BeKP0DiTRPejHCgkDkg7akcgsD_aqM5fkQbEflgH8-8aJufkc0V0ymeK15jJggowEjCoWrg7bt0L_vj4Kil7baQKGCNN_Y0c1b9Yw6f0WAXD0A-en7r879L87_JX0QvoMa2xfsMoXfJjfV8Gjs=w1366-h624-ft">
+      </div>
+      <div id="housesCopy"></div>
+      <div id="canvass"></div>
+      <div id="asphalt"></div>
+      <div id="sun"></div>
+      <div class="bird">
+        <img class="bbody" src="https://lh3.googleusercontent.com/fife/ABSRlIqxq6KluPWwLaLTtQhXLs1TU9Rcc7MLQsDxrZBUFZoqK8dyczfwANHGwqcYFj6w5U05drcRCsQrVOAgpT5hzMtORMCGRFaK2LWK8Qcqag6DFt26aGpsMf-SdSBXapv9qOgfcXRHt44UW-fY_2YvtsDpvEjQEsqlHL7NPYEt9TA3uJC5Y10MOAneVn5ZsZUlP4ac0dcITP5-0SGs9RbQ0NdXDkyz-9ObJ03l-mir8J-OewvPEPS-k5r0ZcBneWV4uILaMA1q4HamReAT5TyOHc9cxP5CFrNN2fS3-MOVW7o9imHhZ9tyx63QyBbp8M7SqXW-Q4VL8mdETG6tcLgCKAsYHTKaoXTw57NnqXZKLe_GKDxvgoTKBTy6-9PyUBnX7urU0vVND7i5Qch8NzuNdutvWJzMZ1YPLRqn7GgYAWbFxXUCrWeS-qRY5WS9x_-L8P47ohd-ycyFXj2FCiNs30NBHRBko83F30b5tW6FLQDhLXuwgl4vAlXAkFgenqHJ9c3z3y0s_q9WLUzmSO-5JS08YCouxeZHEm2v0mMqRGRrEOxNKk8x31A0HpRrfe8Gs_j3n3Cserp-oXY1FN1hhlhNuXrpQ6A1EgX6Z13ChljQqF6frP5MkIT3v-FFRs7oubkx_mPOFHktDmLIM0ONUU8A5Q5kygKI8gJ3L7M1vP-H_I1xsD5oINSmizITGQk1cM6MhHfsWPxWnScp0ovPVr_HNpr__gMnysc=w1366-h624-ft" alt="a madár teste">
+        <img class="bwings" src="https://lh3.googleusercontent.com/fife/ABSRlIra5bDDwLGBlVAv8H7h8yZBtPRlfkZX6Wc-rTPwH6r4n20rFSNj7PI0PoCTD8dD4GytVyu-NmbXgNwqzP5yWC_XlRMzFZwA0er34rUcfWvJeW8N-hjjdniAn7Hg2KXwhW0J6eLxDaw8wqPZHQAlJgse-9TF7o2MY2lOqBpjy_Z8KPshr29XiWSJAcckMB_tssXkmXEdG5cCBJAoESEgpqdeNF1LmiVlzG0-Nj23W-jMy8UsV7O3X8A8UR-QDSC9aJoSTXbYZ7SKeX7ivOvI8qeUhFhgRtPQRsz_hpTG3It63xaBaqKTFEpBcVz5JTgVSTcd4KLgZqrQfxhOqwvgXMUsYH8wFnPPm1QB8sAe_t-eCvIKgXdAWBFnv57h87q-Qf0pHX_JMib6-gcgiNd-Csv0-L0etKNQ4joTs3dNt116vRn3uLo6Txn6g2gihoFzUauQ1HdRRMcAUBWJnK-xDe0SQ4OOPTD60xvTUsLmOTv5svK3WCK22fSrvy4-DepYtzkv-DxhI0jkmehI_fP29Wnl_LiUFIXK-WMHe3eTE9qcraATdxDBRqe2rloDvl8PrjxxNdccAcY9cxsDM-oZF3KuCdcgbYqyGG9oqa9Jo5czjI0rq0AeZ25O160b6-2tc-X7p0PFfxY3rUZofJ8PFXBBA0FBgUVZmY5caJpyahIMc0UIUDnpf31TGNCw1oICiPVau4Mj7iIffMQGJvK1ZMZKoEczpOpfTVU=w1366-h624-ft" alt="a madár szárnya">
+      </div>
+      <div class="bird first"></div>
+      <div class="bird second"></div>
+    </div>
+    <h1 id="hide">2_click = center;</h1>
+    <button type="button" onclick="document.documentElement.requestFullscreen(); this.textContent = 'ON';" ondblclick="document.exitFullscreen(); this.textContent = 'OFF';">T.k.</button>
+    <form>
+      <label>Nap?</label>
+      <input type="checkbox" id="sunLight">
+      <br>
+      <label>Autó?</label>
+      <input type="checkbox" id="car" checked>
+    </form>
+    <footer>← ? →</footer>
+  </body>
+</html>
